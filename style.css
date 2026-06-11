@@ -1,0 +1,98 @@
+/* Custom Styles for Earth & Environmental Data Science Portfolio */
+
+/* 1. Base Smooth Scrolling & Layout Fixes */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ensures the footer sticks to the bottom on shorter pages */
+body {
+    display: flex;
+    flex-direction: flex-col;
+    min-h-screen: 100vh;
+}
+
+/* 2. Premium Hero Background Layout (Used on index.html) */
+.hero-geospatial {
+    position: relative;
+    background-color: #020617; /* slate-950 */
+    overflow: hidden;
+}
+
+/* Immersive Teal & Deep Ocean Radial Gradient */
+.hero-geospatial::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(13, 148, 136, 0.4) 0%, rgba(23, 37, 84, 0.7) 50%, #020617 100%);
+    z-index: 1;
+}
+
+/* Digital Data Grid Overlay (Mimicking satellite telemetry grids) */
+.hero-geospatial::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.12;
+    background-image: 
+        linear-gradient(to right, #0f172a 1px, transparent 1px),
+        linear-gradient(to bottom, #0f172a 1px, transparent 1px);
+    background-size: 4rem 4rem;
+    z-index: 2;
+}
+
+/* Soft Emerald Ambient Glow Cluster */
+.hero-glow-blur {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 24rem;
+    height: 24rem;
+    background-color: rgba(16, 185, 129, 0.1); /* emerald-500/10 */
+    border-radius: 50%;
+    filter: blur(64px);
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Bring Hero Content Above Background Layers */
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+/* 3. Computer Vision / Target Profile Frame Graphics */
+.profile-cv-glow {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(to right, #10b981, #3b82f6); /* emerald to blue */
+    border-radius: 50%;
+    filter: blur(4px);
+    opacity: 0.25;
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover .profile-cv-glow {
+    opacity: 0.45;
+}
+
+.profile-frame {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(52, 211, 153, 0.4); /* emerald-400/40 */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    background-color: #0f172a;
+}
+
+@media (min-width: 768px) {
+    .profile-frame {
+        width: 12rem;
+        height: 12rem;
+    }
+}
