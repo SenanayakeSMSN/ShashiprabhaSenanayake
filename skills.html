@@ -14,7 +14,7 @@
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
             <a href="index.html" class="text-xl font-bold tracking-wide text-slate-900">SHASHIPRABHA <span class="text-emerald-600">S.</span></a>
             <div class="space-x-6 font-medium text-slate-600 text-sm hidden md:flex">
-                <a href="index.html" class="hover:text-emerald-600 transition">About & Experience</a>
+                <a href="index.html" class="hover:text-emerald-600 transition">About</a>
                 <a href="education.html" class="hover:text-emerald-600 transition">Education</a>
                 <a href="projects.html" class="hover:text-emerald-600 transition">Projects</a>
                 <a href="skills.html" class="text-emerald-600 font-semibold border-b-2 border-emerald-500 pb-1">Skills</a>
@@ -25,20 +25,113 @@
 
     <main class="max-w-6xl mx-auto px-4 py-12 flex-grow w-full mt-4">
         <section id="skills" class="bg-white p-8 rounded-xl shadow-sm border border-slate-100">
-            <h2 class="text-2xl font-bold text-slate-900 mb-6 border-b-2 border-slate-100 pb-2 flex items-center"><i class="fas fa-code mr-3 text-emerald-600"></i> Technical Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm md:text-base">
-                <div class="p-4 rounded-lg bg-slate-50/60 border border-slate-100">
-                    <h3 class="font-bold text-slate-900 mb-3 text-xs tracking-wide uppercase text-emerald-600">Languages & Core</h3>
-                    <p class="text-slate-600 leading-relaxed">Python, R, SQL, Java, GNU Octave, Statistical Modelling, Deep Learning, Computer Vision, Machine Learning, Technical Report Writing</p>
+            <h2 class="text-2xl font-bold text-slate-900 mb-8 border-b-2 border-slate-100 pb-2 flex items-center"><i class="fas fa-code mr-3 text-emerald-600"></i> Technical Skills</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+                
+                <div class="p-5 rounded-xl bg-gradient-to-b from-emerald-50/30 to-white border border-emerald-100/60 flex flex-col justify-between space-y-6 shadow-xs">
+                    <div>
+                        <h3 class="font-bold text-emerald-700 mb-4 text-xs tracking-wider uppercase flex items-center gap-2">
+                            <i class="fas fa-laptop-code text-base"></i> Languages & Core
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center gap-1.5 bg-emerald-100/70 text-emerald-800 text-xs px-2.5 py-1 rounded-md font-semibold"><i class="fab fa-python"></i> Python</span>
+                            <span class="inline-flex items-center gap-1.5 bg-emerald-100/70 text-emerald-800 text-xs px-2.5 py-1 rounded-md font-semibold"><i class="fas fa-chart-line"></i> R</span>
+                            <span class="inline-flex items-center gap-1.5 bg-emerald-100/70 text-emerald-800 text-xs px-2.5 py-1 rounded-md font-semibold"><i class="fas fa-database"></i> SQL</span>
+                            <span class="inline-flex items-center gap-1.5 bg-emerald-100/70 text-emerald-800 text-xs px-2.5 py-1 rounded-md font-semibold"><i class="fab fa-java"></i> Java</span>
+                            <span class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-xs px-2.5 py-1 rounded-md border border-emerald-100">GNU Octave</span>
+                            <span class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-xs px-2.5 py-1 rounded-md border border-emerald-100">Statistical Modelling</span>
+                            <span class="inline-flex items-center gap-1.5 bg-teal-50 text-teal-700 text-xs px-2.5 py-1 rounded-md border border-teal-100">Deep Learning</span>
+                            <span class="inline-flex items-center gap-1.5 bg-teal-50 text-teal-700 text-xs px-2.5 py-1 rounded-md border border-teal-100">Computer Vision</span>
+                            <span class="inline-flex items-center gap-1.5 bg-teal-50 text-teal-700 text-xs px-2.5 py-1 rounded-md border border-teal-100">Machine Learning</span>
+                            <span class="inline-flex items-center gap-1.5 bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md"><i class="fas fa-file-alt"></i> Technical Report Writing</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-900 text-slate-300 p-3 rounded-lg font-mono text-[11px] space-y-2 border border-slate-800">
+                        <div class="flex justify-between items-center text-[10px] text-slate-500 border-b border-slate-800 pb-1">
+                            <span>MODEL TEST PANEL</span>
+                            <span class="text-emerald-400 font-bold animate-pulse">● RUNNING</span>
+                        </div>
+                        <div class="space-y-1">
+                            <div class="flex justify-between"><span>Training Epochs:</span> <span class="text-amber-400">150/150</span></div>
+                            <div class="flex justify-between"><span>Val Loss Matrix:</span> <span id="v1-loss" class="text-emerald-400 font-bold">0.0241</span></div>
+                        </div>
+                        <button type="button" onclick="tuneHyperparameters()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-sans font-bold py-1 rounded text-[10px] transition">Tune Layer Weights</button>
+                    </div>
                 </div>
-                <div class="p-4 rounded-lg bg-slate-50/60 border border-slate-100">
-                    <h3 class="font-bold text-slate-900 mb-3 text-xs tracking-wide uppercase text-emerald-600">Geospatial & Cloud</h3>
-                    <p class="text-slate-600 leading-relaxed">Google Earth Engine, QGIS, GIS & Geospatial Analysis, Google Cloud Platform APIs, GitHub, Scientific Data Analysis</p>
+
+                <div class="p-5 rounded-xl bg-gradient-to-b from-violet-50/30 to-white border border-violet-100/60 flex flex-col justify-between space-y-6 shadow-xs">
+                    <div>
+                        <h3 class="font-bold text-violet-700 mb-4 text-xs tracking-wider uppercase flex items-center gap-2">
+                            <i class="fas fa-globe-americas text-base"></i> Geospatial & Cloud
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center gap-1.5 bg-violet-100/70 text-violet-800 text-xs px-2.5 py-1 rounded-md font-semibold"><i class="fas fa-satellite"></i> Google Earth Engine</span>
+                            <span class="inline-flex items-center gap-1.5 bg-violet-100/70 text-violet-800 text-xs px-2.5 py-1 rounded-md font-semibold"><i class="fas fa-map-marked-alt"></i> QGIS</span>
+                            <span class="inline-flex items-center gap-1.5 bg-violet-50 text-violet-700 text-xs px-2.5 py-1 rounded-md border border-violet-100">GIS & Geospatial Analysis</span>
+                            <span class="inline-flex items-center gap-1.5 bg-indigo-100/70 text-indigo-800 text-xs px-2.5 py-1 rounded-md font-semibold"><i class="fab fa-google"></i> GCP APIs</span>
+                            <span class="inline-flex items-center gap-1.5 bg-slate-800 text-slate-100 text-xs px-2.5 py-1 rounded-md font-semibold"><i class="fab fa-github"></i> GitHub</span>
+                            <span class="inline-flex items-center gap-1.5 bg-violet-50 text-violet-700 text-xs px-2.5 py-1 rounded-md border border-violet-100"><i class="fas fa-microscope"></i> Scientific Data Analysis</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-950 text-slate-300 p-3 rounded-lg font-mono text-[11px] space-y-2 border border-slate-900">
+                        <div class="flex justify-between items-center text-[10px] text-slate-500 border-b border-slate-900 pb-1">
+                            <span>GEOSPATIAL INTERFEROMETRY</span>
+                            <span class="text-violet-400">EPSG:4326</span>
+                        </div>
+                        <div class="space-y-1.5">
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-400 font-sans">Raster Overlay Opacity:</span>
+                                <span id="v2-opacity-txt" class="text-violet-400 font-bold">70%</span>
+                            </div>
+                            <input type="range" id="v2-slider" min="10" max="100" value="70" oninput="adjustGisLayer()" class="w-full accent-violet-500 h-1 bg-slate-800 rounded cursor-pointer">
+                        </div>
+                        <div class="text-[10px] font-sans text-slate-400 bg-slate-900 p-1.5 rounded text-center border border-slate-800/50">
+                            Spatial Cluster Status: <span id="v2-status" class="text-emerald-400 font-bold">Stable Vector</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="p-4 rounded-lg bg-slate-50/60 border border-slate-100">
-                    <h3 class="font-bold text-slate-900 mb-3 text-xs tracking-wide uppercase text-emerald-600">Libraries & Toolkits</h3>
-                    <p class="text-slate-600 leading-relaxed">Scikit-learn, Pandas, NumPy, Streamlit, MongoDB, PostgreSQL, MySQL, Power BI, Excel, SPSS, Minitab</p>
+
+                <div class="p-5 rounded-xl bg-gradient-to-b from-sky-50/30 to-white border border-sky-100/60 flex flex-col justify-between space-y-6 shadow-xs">
+                    <div>
+                        <h3 class="font-bold text-sky-700 mb-4 text-xs tracking-wider uppercase flex items-center gap-2">
+                            <i class="fas fa-tools text-base"></i> Libraries & Toolkits
+                        </h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center gap-1.5 bg-sky-100/70 text-sky-800 text-xs px-2.5 py-1 rounded-md font-semibold">Scikit-learn</span>
+                            <span class="inline-flex items-center gap-1.5 bg-sky-100/70 text-sky-800 text-xs px-2.5 py-1 rounded-md font-semibold">Pandas</span>
+                            <span class="inline-flex items-center gap-1.5 bg-sky-100/70 text-sky-800 text-xs px-2.5 py-1 rounded-md font-semibold">NumPy</span>
+                            <span class="inline-flex items-center gap-1.5 bg-sky-50 text-sky-700 text-xs px-2.5 py-1 rounded-md border border-sky-100">Streamlit</span>
+                            <span class="inline-flex items-center gap-1.5 bg-amber-50 text-amber-800 text-xs px-2.5 py-1 rounded-md border border-amber-100 font-semibold"><i class="fas fa-leaf"></i> MongoDB</span>
+                            <span class="inline-flex items-center gap-1.5 bg-blue-50 text-blue-700 text-xs px-2.5 py-1 rounded-md border border-blue-100">PostgreSQL</span>
+                            <span class="inline-flex items-center gap-1.5 bg-blue-50 text-blue-700 text-xs px-2.5 py-1 rounded-md border border-blue-100">MySQL</span>
+                            <span class="inline-flex items-center gap-1.5 bg-amber-100/70 text-amber-900 text-xs px-2.5 py-1 rounded-md font-semibold"><i class="fas fa-chart-bar"></i> Power BI</span>
+                            <span class="inline-flex items-center gap-1.5 bg-green-100/70 text-green-800 text-xs px-2.5 py-1 rounded-md font-semibold"><i class="fas fa-file-excel"></i> Excel</span>
+                            <span class="inline-flex items-center gap-1.5 bg-sky-50 text-sky-700 text-xs px-2.5 py-1 rounded-md border border-sky-100">SPSS</span>
+                            <span class="inline-flex items-center gap-1.5 bg-sky-50 text-sky-700 text-xs px-2.5 py-1 rounded-md border border-sky-100">Minitab</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-slate-50 border border-slate-200 p-3 rounded-lg space-y-2">
+                        <div class="flex justify-between items-center text-[10px] font-bold text-slate-400 uppercase tracking-wide">
+                            <span><i class="fas fa-th-large text-sky-600 mr-1"></i> Telemetry Matrix</span>
+                            <span class="font-mono text-slate-500">App Active</span>
+                        </div>
+                        <div class="space-y-1">
+                            <span class="text-[10px] font-bold text-slate-600 block">DB Query Speed (1,000 Records)</span>
+                            <div class="w-full bg-slate-200 rounded-full h-2 relative overflow-hidden">
+                                <div id="v3-progress" class="bg-sky-500 h-2 rounded-full transition-all duration-500" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="flex gap-1.5 pt-0.5">
+                            <button type="button" onclick="benchmarkDataEngine('mongo')" class="flex-1 bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 text-[9px] font-bold py-1 rounded shadow-xs transition">MongoDB</button>
+                            <button type="button" onclick="benchmarkDataEngine('sql')" class="flex-1 bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 text-[9px] font-bold py-1 rounded shadow-xs transition">Postgres</button>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </section>
     </main>
@@ -47,7 +140,7 @@
         <section id="contact" class="bg-slate-900 text-white p-8 rounded-2xl text-center space-y-6 relative overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-r from-teal-950/30 to-slate-900/10 pointer-events-none"></div>
             <h2 class="text-2xl font-bold relative z-10">Let's Connect</h2>
-            <p class="text-slate-400 max-w-md mx-auto text-sm relative z-10">Are you looking to collaborate on machine learning implementations, environmental data modeling, spatial AI architectures, or analytical telemetry projects?</p>
+            <p class="text-slate-400 max-w-md mx-auto text-sm relative z-10">Are you looking to collaborate on  data analytics, machine learning implementations in real world applications, environmental data modeling, and AI architectures?</p>
             <div class="flex flex-wrap justify-center gap-6 text-sm font-medium pt-2 relative z-10">
                 <span class="flex items-center gap-2"><i class="fas fa-phone text-emerald-400"></i> +94 70 5523737</span>
                 <span class="flex items-center gap-2"><i class="fas fa-envelope text-emerald-400"></i> shashinilupuli123@gmail.com</span>
@@ -59,5 +152,46 @@
     <footer class="bg-slate-100 border-t border-slate-200 py-6 text-center text-xs text-slate-500">
         <p>&copy; 2026 Shashiprabha Senanayake. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Visual 1: Neural Net Hyperparameter Weight Randomizer Simulation
+        function tuneHyperparameters() {
+            const lossDisplay = document.getElementById('v1-loss');
+            // Simulate model optimizer convergence
+            const randomizedLoss = (0.005 + Math.random() * 0.015).toFixed(4);
+            lossDisplay.innerText = randomizedLoss;
+        }
+
+        // Visual 2: GIS Overlay Resolution Engine Tracker
+        function adjustGisLayer() {
+            const opacityVal = document.getElementById('v2-slider').value;
+            document.getElementById('v2-status');
+            document.getElementById('v2-opacity-txt').innerText = opacityVal + '%';
+            
+            const statusNode = document.getElementById('v2-status');
+            if (opacityVal < 40) {
+                statusNode.innerText = "Sparse Render";
+                statusNode.className = "text-amber-500 font-bold";
+            } else if (opacityVal >= 40 && opacityVal <= 80) {
+                statusNode.innerText = "Stable Vector";
+                statusNode.className = "text-emerald-400 font-bold";
+            } else {
+                statusNode.innerText = "High Resolution";
+                statusNode.className = "text-sky-400 font-bold";
+            }
+        }
+
+        // Visual 3: Toolkit Data Infrastructure Pipeline Simulator
+        function benchmarkDataEngine(engineKey) {
+            const progressBar = document.getElementById('v3-progress');
+            if (engineKey === 'mongo') {
+                progressBar.style.width = '94%';
+                progressBar.className = "bg-amber-500 h-2 rounded-full transition-all duration-500";
+            } else {
+                progressBar.style.width = '74%';
+                progressBar.className = "bg-blue-500 h-2 rounded-full transition-all duration-500";
+            }
+        }
+    </script>
 </body>
 </html>
